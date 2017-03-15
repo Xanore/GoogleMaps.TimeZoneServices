@@ -1,5 +1,5 @@
 # GoogleMaps.TimeZoneServices
-A simple Library (Including nuget package) for Google Maps Timezone API
+A simple Library (Including nuget package) for Google Maps Time Zone API
 
 Google documentation on the used API can be found at (https://developers.google.com/maps/documentation/timezone) 
 

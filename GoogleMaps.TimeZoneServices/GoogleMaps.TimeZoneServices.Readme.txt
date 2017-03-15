@@ -1,0 +1,8 @@
+﻿# GoogleMaps.TimeZoneServices
+A simple Library (Including nuget package) for Google Maps Time Zone API
+
+
+Version History
+===============
+
+0.1 Initial release
