@@ -28,7 +28,7 @@ Example Lookup
                 }
            };
 
-      var gtzs = new GoogleTimeZoneServices();
+      var gtzs = new GoogleTimeZoneServices(YOUR_GOOGLE_API_KEY);
 
       // Without Daylight saving time
       System.Console.WriteLine("=== DST not taken in conciduration ===");
