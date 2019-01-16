@@ -8,6 +8,9 @@ namespace GoogleMaps.TimeZoneServices.Console
 {
   class Program
   {
+
+    private const string YOUR_GOOGLE_API_KEY = "";
+
     static void Main(string[] args)
     {
 
@@ -30,7 +33,10 @@ namespace GoogleMaps.TimeZoneServices.Console
                 }
            };
 
-      var gtzs = new GoogleTimeZoneServices();
+      if (YOUR_GOOGLE_API_KEY.Length == 0)
+        System.Console.WriteLine("No Google API Key specified. Check the code for 'YOUR_GOOGLE_API_KEY'.");
+
+      var gtzs = new GoogleTimeZoneServices(YOUR_GOOGLE_API_KEY);
 
       // Without Daylight saving time
       System.Console.WriteLine("=== DST not taken in conciduration ===");

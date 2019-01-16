@@ -18,22 +18,53 @@ namespace GoogleMaps.TimeZoneServices
 
 
     #region Constructors
+
     /// <summary>
-    /// Initializes a new instance of the <see cref="GoogleTimeZoneServices"/> class.
+    /// Initializes a new instance of the <see cref="GoogleTimeZoneServices"/> class. 
+    /// </summary>
+    /// <param name="useHttps">Indicates whether to call the Google API over HTTPS or not.</param>
+    public GoogleTimeZoneServices(bool useHttps)
+    {
+      APIKey = "";
+      UseHttps = useHttps;
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="GoogleTimeZoneServices"/> class. Default calling the API over regular
+    /// HTTP (not HTTPS).
     /// </summary>
     public GoogleTimeZoneServices()
+      : this(false)
     {
+      APIKey = "";
     }
+
+    public GoogleTimeZoneServices(string apikey)
+    {
+      APIKey = apikey;
+      UseHttps = true;
+    }
+
     #endregion
 
 
     #region Properties
 
+    /// <summary>
+    /// Gets a value indicating whether to use the Google API over HTTPS.
+    /// </summary>
+    /// <value>
+    /// <c>true</c> if using the API over HTTPS; otherwise, <c>false</c>.
+    /// </value>
+    public bool UseHttps { get; private set; }
+
+    private string APIKey { get; set; }
+
     private string UrlProtocolPrefix
     {
       get
       {
-        return "https://";
+        return UseHttps ? "https://" : "http://";
       }
     }
 
@@ -74,7 +105,7 @@ namespace GoogleMaps.TimeZoneServices
     public TimeZone GetTimeZoneWithDstFromLatLong(double latitude, double longitude, DateTime dstTime)
     {
       var timeStamp = CalcTimeStamp(dstTime);
-      XDocument doc = XDocument.Load(string.Format(APIUrlTimeZoneFromLatLong, latitude, longitude, timeStamp));
+      XDocument doc = XDocument.Load(string.Format(APIUrlTimeZoneFromLatLong, latitude, longitude, timeStamp) + "&key=" + APIKey);
 
       var els = doc.Descendants("TimeZoneResponse").FirstOrDefault();
 
