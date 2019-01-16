@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleMaps.TimeZoneServices
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleMaps.TimeZoneServices.Console", "GoogleMaps.TimezZoneServices.Console\GoogleMaps.TimeZoneServices.Console.csproj", "{1C2DAB17-4CA9-4BEF-9AF3-8E41A3FAFE91}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{9F11876F-10EC-4DED-A4B5-8AE01150A187}"
+	ProjectSection(SolutionItems) = preProject
+		GoogleMaps.TimeZoneServices.1.0.0.nupkg = GoogleMaps.TimeZoneServices.1.0.0.nupkg
+		GoogleMaps.TimeZoneServices.1.1.0.nupkg = GoogleMaps.TimeZoneServices.1.1.0.nupkg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
