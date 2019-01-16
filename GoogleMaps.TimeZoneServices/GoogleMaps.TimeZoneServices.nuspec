@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/Xanore/GoogleMaps.TimeZoneServices</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A simple Library (Including nuget package) for Google Maps Time Zone API</description>
-    <releaseNotes>Initial release.</releaseNotes>
+    <releaseNotes>Added API key support. Needed for Google Maps Platform update from June 11th, 2018.</releaseNotes>
     <copyright>Copyright ByQloud Ltd 2017</copyright>
     <tags>Google Maps Timezone Time Zone</tags>
   </metadata>
